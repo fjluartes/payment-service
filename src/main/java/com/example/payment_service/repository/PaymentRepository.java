@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel="payment", path="payment")
 public interface PaymentRepository extends PagingAndSortingRepository<Payment, Long>, CrudRepository<Payment, Long> {
     List<Payment> findByPaymentId(@Param("paymentId") Long paymentId);
     List<Payment> findByBillType(@Param("billType") String billType);
