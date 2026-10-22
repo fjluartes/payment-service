@@ -11,7 +11,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel="payment", path="payment")
 public interface PaymentRepository extends PagingAndSortingRepository<Payment, Long>, CrudRepository<Payment, Long> {
-    List<Payment> findByPaymentId(@Param("paymentId") Long paymentId);
-    List<Payment> findByBillType(@Param("billType") String billType);
+    List<Payment> findByPaymentId(@Param("id") Long id);
+    List<Payment> findByPaymentType(@Param("paymentType") String paymentType);
     List<Payment> findByStatus(@Param("status") PaymentStatus status);
 }
